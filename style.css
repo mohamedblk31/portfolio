@@ -445,3 +445,18 @@ p { margin-bottom: 20px; color: #334155; font-size: 1.1rem; text-align: justify;
     font-size: 0.95rem;
     text-align: left;
 }
+
+/* État au chargement : flou */
+.blur-page {
+    filter: blur(15px);
+    transition: filter 0.5s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* État quand on clique (la classe est retirée) */
+.content-container:not(.blur-page) {
+    filter: blur(0);
+    user-select: auto;
+    cursor: default;
+}

@@ -10,9 +10,9 @@
 
     <header class="hero">
         <div class="hero-text">
-            <h1>MOHAMED BELKORCHI</h1>
+            <h1>BIENVENUE SUR MON PORTFOLIO</h1>
             <div class="main-line"></div>
-            <p>Bienvenue sur mon Portfolio</p>
+            <p>Mohamed Belkorchi | Étudiant BTS SIO SISR</p>
         </div>
     </header>
 
@@ -26,7 +26,7 @@
         </ul>
     </nav>
 
-    <main class="content-container">
+    <main id="main-content" class="content-container blur-page" onclick="unlockPage()">
         <section class="info-card">
             <h2>Présentation</h2>
             <div class="title-underline"></div>
@@ -81,6 +81,22 @@
             </div>
         </section>
     </main>
+
+    <script>
+        const main = document.getElementById('main-content');
+
+        // Au chargement : on vérifie si l'utilisateur a déjà cliqué une fois
+        if (localStorage.getItem('portfolio-unlocked') === 'true') {
+            main.classList.remove('blur-page');
+        }
+
+        // Fonction lancée au clic
+        function unlockPage() {
+            main.classList.remove('blur-page');
+            // On enregistre l'info dans le navigateur pour la prochaine fois
+            localStorage.setItem('portfolio-unlocked', 'true');
+        }
+    </script>
 
 </body>
 </html>
